@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sebuah Pesan Untuk Aulia 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fbcfe8, #fed7aa, #c7d2fe);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #334155;
+            padding: 20px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 40px 30px;
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            color: #db2777;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #475569;
+            margin-bottom: 25px;
+            min-height: 80px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #f43f5e, #fb7185);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(244, 63, 94, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1 id="title">Hai, Aulia! ✨</h1>
+        <p id="message">Tetap santai walaupun tugas membantai. Semangat ya! 💪💖</p>
+        <button class="btn" onclick="nextMessage()">Pesan Lain Untuk Aulia 🌸</button>
+        <div class="footer">Dibuat khusus untuk Aulia hari ini.</div>
+    </div>
+
+    <script>
+        const messages = [
+            "Agar tidak di manfaatkan oleh orang lain, maka jadilah orang yang tidak bermanfaat. Semangat ya! 💪💖",
+            "Diam bukan berarti lemah, tapi lapar. jangan lupa makan, aul! 🌟",
+            "Jika kau gagal hari ini, percayalah bahwa besok adalah tomorrow. Jan lupa ngopi. 🍵✨",
+            "Selamat menjalani hari yang ngga worth it ini! 😊",
+            "Aku cuma mau bilang: jadilah diri sendiri tanpa meniru orang lain, karena dokumen asli lebih penting dari pada fotocopy! 🚀💫"
+        ];
+
+        let currentIndex = 0;
+
+        function nextMessage() {
+            currentIndex = (currentIndex + 1) % messages.length;
+            const msgElement = document.getElementById("message");
+            
+            // Efek transisi sederhana
+            msgElement.style.opacity = 0;
+            setTimeout(() => {
+                msgElement.innerText = messages[currentIndex];
+                msgElement.style.opacity = 1;
+            }, 150);
+        }
+
+        document.getElementById("message").style.transition = "opacity 0.15s ease-in-out";
+    </script>
+</body>
+</html>
